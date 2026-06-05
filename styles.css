@@ -77,6 +77,7 @@ body h1 {
     height: 200px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .countdown-item-new .material-icons {
@@ -130,6 +131,7 @@ body h1 {
     border: none;
     border-radius: 5px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .card-action-btn-done-btn:hover {
@@ -152,6 +154,7 @@ body h1 {
     border: none;
     border-radius: 5px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .card-action-btn-delete-btn:hover {
@@ -249,6 +252,7 @@ body h1 {
 
 .card-action-btn {
     width: 75px;
+    cursor: pointer;
 }
 
 /* Overlay that dims the page behind the modal */
@@ -332,6 +336,7 @@ body h1 {
     border: none;
     border-radius: 5px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 #close-modal-btn:hover {
@@ -351,6 +356,7 @@ body h1 {
     border: none;
     border-radius: 5px;
     transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 #create-modal-btn:hover {
