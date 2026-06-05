@@ -220,6 +220,27 @@ body h1 {
     transition: all 0.3s ease;
 }
 
+#delete-all-completed-btn {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 700;
+    background-color: #43d84b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+#delete-all-completed-btn:hover {
+    background-color: #33a339;
+    transition: all 0.3s ease;
+}
+
 #add-countdown-btn .fira-sans-bold {
     font-family: "Fira Sans", sans-serif;
     font-weight: 700;

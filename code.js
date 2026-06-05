@@ -33,7 +33,9 @@ function renderCountdowns() {
             <div class="countdown-item-new" id="countdown-add" onclick="openModal()">
                 <span class="material-icons">add</span>
             </div>
+
         `;
+
     } else {
         countdownWrapper.innerHTML = '';
         
@@ -42,7 +44,7 @@ function renderCountdowns() {
                 countdownWrapper.innerHTML += `
                     <div class="countdown-item-completed" id="countdown-${countdown.id}">
                         <h2>${countdown.title}</h2>
-                        <p>Timeout: ${countdown.date}</p>
+                        <p>Timeout: ${formatTargetDate(countdown.date)}</p>
                         <p class="countdown-completed-p">Completed!</p>
                         <div class="countdown-actions">
                             <button class="card-action-btn-delete-btn" onclick="deleteCountdown(${countdown.id})">
@@ -55,8 +57,8 @@ function renderCountdowns() {
                 countdownWrapper.innerHTML += `
                     <div class="countdown-item" id="countdown-${countdown.id}">
                         <h2>${countdown.title}</h2>
-                        <p>Timeout: ${countdown.date}</p>
-                        <p>Time Left: </p>
+                        <p>Timeout: ${formatTargetDate(countdown.date)}</p>
+                        <p>Time Left: ${calculateTimeLeft(countdown.date, countdown.id)}</p>
                         <div class="countdown-actions">
                             <button class="card-action-btn-done-btn" onclick="markAsDone(${countdown.id})">
                                 <span class="material-icons">check_circle</span>
@@ -91,6 +93,46 @@ function deleteAllCountdowns() {
     renderCountdowns();
 }
 
+function deleteAllCompletedCountdowns() {
+    countdowns = countdowns.filter(countdown => countdown.isCompleted === false); // the filter function will look through the countdowns array and check what  elements are marked as complete
+    localStorage.setItem('countdowns', JSON.stringify(countdowns)); //this line completely refreshes the array and saves only the countdowns that have not yet been completed, then the data turns into string
+    renderCountdowns(); // updates countdown cards
+}
+
+function calculateTimeLeft(date, countdown){
+    const dateNow = new Date().getTime() // .getTime() ensures the time is in miliseconds, exactly what computers read
+    const targetDate = new Date(date).getTime() // the parameter date is wrapped inside the function to first convert it into miliseconds
+    const difference = targetDate - dateNow
+    
+    if (difference <= 0){
+        markAsDone(countdown)
+        return "Completed!"
+    } else {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24))
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000)
+
+        return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+}
+
+function formatTargetDate(dateString) {
+    if (!dateString) return '';
+    
+    const dateObj = new Date(dateString);
+    
+    // Configures exactly how the text will display
+    return dateObj.toLocaleString('en-UK', {
+        day: 'numeric', 
+        month: 'numeric',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+    });
+}
+
 addCountdownForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const Title = countdownTitleInput.value;
@@ -111,3 +153,6 @@ addCountdownForm.addEventListener('submit', (e) => {
 });
 
 renderCountdowns();
+
+setInterval(renderCountdowns, 1000)
+
