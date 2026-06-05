@@ -1,0 +1,312 @@
+body {
+    font-family: Fira Sans, sans-serif;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+body h1 {
+    font-size: 48px;
+    color: #252525;
+}
+
+#nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #161616;
+    width: 100%;
+    max-height: 80px;
+}
+
+#nav h1 {
+    color: #fff;
+    font-size: 24px;
+    margin: 0;
+}
+
+#nav-wrapper {
+    width: 100%;
+    margin: 0 275px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#countdown-wrapper {
+    border-radius: 10px;
+    margin: 0 auto;
+    min-height: 600px;
+    min-width: 1000px;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.countdown-item-new {
+    font-family: "Fira Sans", sans-serif;
+    font-size: 64px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #969696;
+    width: 250px;
+    height: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.countdown-item-new .material-icons {
+    font-size: 40px;
+}
+
+.countdown-item-new:hover {
+    background-color: #d3d3d3;
+    transition: all 0.3s ease;
+}
+
+.countdown-item {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #969696;
+    width: 250px;
+    height: 200px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#done-btn {
+    height: 35px;
+    background-color: #43d84b;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#done-btn:hover {
+    background-color: #7fff58;
+    transition: all 0.3s ease;
+}
+
+#done-btn .material-icons {
+    color: #1d4112;
+}
+
+#delete-btn .material-icons {
+    color: #330f0f;
+}
+
+#delete-btn {
+    height: 35px;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#delete-btn:hover {
+    background-color: #ff9595;
+    transition: all 0.3s ease;
+}
+
+#app-wrapper {
+    align-items: center;
+    margin: 0 200px;
+    height: 100%;
+    height: 100%;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#footer p {
+    color: #414141;
+    font-size: 14px;
+}
+
+#add-countdown-btn {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 700;
+    background-color: #558bdd;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+#add-countdown-btn:hover {
+    background-color: #3a6cb0;
+    transition: all 0.3s ease;
+}
+
+#add-countdown-btn .fira-sans-bold {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.card-action-btn {
+    width: 75px;
+}
+
+/* Overlay that dims the page behind the modal */
+#overlay {
+    position: fixed;
+    inset: 0;
+    /* top:0; right:0; bottom:0; left:0 */
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    z-index: 50;
+}
+
+/* Modal container centered on screen */
+#modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    font-family: "Fira Sans", sans-serif;
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+#add-countdown-form {
+    font-family: "Fira Sans", sans-serif;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal-content label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="date"] {
+    font-family: "Fira Sans", sans-serif;
+    padding: 8px 10px;
+    border: 1px solid #558bdd;
+    border-radius: 6px;
+}
+
+.modal-actions {
+    font-family: "Fira Sans", sans-serif;
+    font-style: bold;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+#close-modal-btn {
+    font-family: "Fira Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: #330f0f;
+    height: 35px;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#close-modal-btn:hover {
+    background-color: #ff9595;
+    transition: all 0.3s ease;
+}
+
+#create-modal-btn {
+    font-family: "Fira Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: #330f0f;
+    height: 35px;
+    background-color: #43d84b;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+#create-modal-btn:hover {
+    background-color: #7fff58;
+    transition: all 0.3s ease;
+}
+
+#countdown-date-input{
+    font-family: "Fira Sans", sans-serif;
+    padding: 8px 10px;
+    border: 1px solid #558bdd;
+    border-radius: 6px;
+}
+
+#modal-close {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* utility hidden class used by JS to toggle visibility */
+.hidden {
+    display: none;
+}
