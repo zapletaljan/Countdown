@@ -389,7 +389,7 @@ body h1 {
 @media (max-width: 768px) {
     /* Shrank giant main page header text */
     body h1 {
-        font-size: 40px; 
+        font-size: 30px; 
     }
 
     /* Stripped desktop margins so layout elements use full device width safely */
