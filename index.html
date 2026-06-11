@@ -17,37 +17,37 @@
 </head>
 
 <body>
-    <section id="hidden">
-        <nav id="nav">
-            <div id="nav-wrapper">
-                <h1>Countdown App</h1>
-                <div id="nav-right">
-                    <button id="add-countdown-btn" class="nav-btn" onclick="openModal()">
-                        New Countdown <span class="material-icons">add</span>
-                    </button>
-                    <button id="delete-all-completed-btn" class="nav-btn" onclick="deleteAllCompletedCountdowns()">
-                        Delete All Completed <span class="material-icons" >delete</span>
-                    </button>
-                    <button id="delete-all-btn" class="nav-btn" onclick="deleteAllCountdowns()">
-                        Delete All <span class="material-icons" >delete_forever</span>
-                    </button>
-                </div>
-            </div>
 
-        </nav>
-        <div id="app-wrapper">
-            <div id="header">
-                <h1>Active Countdowns</h1>
-            </div>
-            <div id="countdown-wrapper">
-                <div class="countdown-item-new" id="countdown-add" onclick="openModal()">
-                    <span class="material-icons">add</span>
-                </div>
-            </div>
-            <div id="footer">
-                <p>Made by Jan Zapletal</p>
+    <nav id="nav">
+        <div id="nav-wrapper">
+            <h1>Countdown App</h1>
+            <div id="nav-right">
+                <button id="add-countdown-btn" class="nav-btn" onclick="openModal()">
+                    <p>New Countdown</p> <span class="material-icons">add</span>
+                </button>
+                <button id="delete-all-completed-btn" class="nav-btn" onclick="deleteAllCompletedCountdowns()">
+                    <p>Delete All Completed</p> <span class="material-icons">delete</span>
+                </button>
+                <button id="delete-all-btn" class="nav-btn" onclick="deleteAllCountdowns()">
+                    <p>Delete All</p> <span class="material-icons">delete_forever</span>
+                </button>
             </div>
         </div>
+
+    </nav>
+    <div id="app-wrapper" >
+        <div id="header">
+            <h1>Active Countdowns</h1>
+        </div>
+        <div id="countdown-wrapper" >
+            <div class="countdown-item-new" id="countdown-add" onclick="openModal()">
+                <span class="material-icons">add</span>
+            </div>
+        </div>
+        <div id="footer">
+            <p>Made by Jan Zapletal</p>
+        </div>
+    </div>
     </section>
 
     <div id="modal" class="hidden">
@@ -64,7 +64,7 @@
             </form>
         </div>
     </div>
-    </section>
+
 
     <script src="code.js"></script>
 
