@@ -410,7 +410,7 @@ body h1 {
         gap: 20px;
         flex-direction: row;
         align-items: flex-end;
-        margin-right: 40px;
+        
     }
 
     /* Dropped navigation buttons down a fraction for thumb ergonomics */
