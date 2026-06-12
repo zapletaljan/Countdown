@@ -3,6 +3,7 @@ body {
     min-height: 100vh; /* Changed from height to min-height to prevent cutting off scrolling */
     margin: 0 auto;
     background-color: #ffffff;
+    user-select: none;
 }
 
 body h1 {
